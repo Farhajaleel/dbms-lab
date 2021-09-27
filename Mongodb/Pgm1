@@ -1,0 +1,89 @@
+> use mycev
+switched to db mycev
+> db.dbmca.insertOne({"regno":1,"Name":"Akshaya","age":20})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab6b0e8f475c6e3b77e89")
+}
+> db.dbmca.insertOne({"regno":6,"Name":"Abhirami","age":22})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab6c9e8f475c6e3b77e8a")
+}
+> db.dbmca.insertOne({"regno":5,"Name":"Sneha","age":22})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab6f2e8f475c6e3b77e8b")
+}
+> db.dbmca.insertOne({"regno":3,"Name":"Anjana","age":23})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab743e8f475c6e3b77e8c")
+}
+> db.dbmca.insertOne({"regno":4,"Name":"vismaya","age":23})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab76de8f475c6e3b77e8d")
+}
+> db.dbmca.insertOne({"regno":7,"Name":"Amrutha","age":21})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab828e8f475c6e3b77e8e")
+}
+> db.dbmca.insertOne({"regno":8,"Name":"Raj","age":25})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab840e8f475c6e3b77e8f")
+}
+> db.dbmca.insertOne({"regno":9,"Name":"Amal","age":28})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab872e8f475c6e3b77e90")
+}
+> db.dbmca.insertOne({"regno":10,"Name":"Arjun","age":26})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("614ab884e8f475c6e3b77e91")
+}
+> db.dbmca.find({}).limit(5)
+{ "_id" : ObjectId("614ab6b0e8f475c6e3b77e89"), "regno" : 1, "Name" : "Akshaya", "age" : 20 }
+{ "_id" : ObjectId("614ab6c9e8f475c6e3b77e8a"), "regno" : 6, "Name" : "Abhirami", "age" : 22 }
+{ "_id" : ObjectId("614ab6f2e8f475c6e3b77e8b"), "regno" : 5, "Name" : "Sneha", "age" : 22 }
+{ "_id" : ObjectId("614ab743e8f475c6e3b77e8c"), "regno" : 3, "Name" : "Anjana", "age" : 23 }
+{ "_id" : ObjectId("614ab76de8f475c6e3b77e8d"), "regno" : 4, "Name" : "vismaya", "age" : 23 }
+> db.dbmca.find().skip(2)
+{ "_id" : ObjectId("614ab6f2e8f475c6e3b77e8b"), "regno" : 5, "Name" : "Sneha", "age" : 22 }
+{ "_id" : ObjectId("614ab743e8f475c6e3b77e8c"), "regno" : 3, "Name" : "Anjana", "age" : 23 }
+{ "_id" : ObjectId("614ab76de8f475c6e3b77e8d"), "regno" : 4, "Name" : "vismaya", "age" : 23 }
+{ "_id" : ObjectId("614ab828e8f475c6e3b77e8e"), "regno" : 7, "Name" : "Amrutha", "age" : 21 }
+{ "_id" : ObjectId("614ab840e8f475c6e3b77e8f"), "regno" : 8, "Name" : "Raj", "age" : 25 }
+{ "_id" : ObjectId("614ab872e8f475c6e3b77e90"), "regno" : 9, "Name" : "Amal", "age" : 28 }
+{ "_id" : ObjectId("614ab884e8f475c6e3b77e91"), "regno" : 10, "Name" : "Arjun", "age" : 26 }
+> db.dbmca.find().sort({"Name":1})
+{ "_id" : ObjectId("614ab6c9e8f475c6e3b77e8a"), "regno" : 6, "Name" : "Abhirami", "age" : 22 }
+{ "_id" : ObjectId("614ab6b0e8f475c6e3b77e89"), "regno" : 1, "Name" : "Akshaya", "age" : 20 }
+{ "_id" : ObjectId("614ab872e8f475c6e3b77e90"), "regno" : 9, "Name" : "Amal", "age" : 28 }
+{ "_id" : ObjectId("614ab828e8f475c6e3b77e8e"), "regno" : 7, "Name" : "Amrutha", "age" : 21 }
+{ "_id" : ObjectId("614ab743e8f475c6e3b77e8c"), "regno" : 3, "Name" : "Anjana", "age" : 23 }
+{ "_id" : ObjectId("614ab884e8f475c6e3b77e91"), "regno" : 10, "Name" : "Arjun", "age" : 26 }
+{ "_id" : ObjectId("614ab840e8f475c6e3b77e8f"), "regno" : 8, "Name" : "Raj", "age" : 25 }
+{ "_id" : ObjectId("614ab6f2e8f475c6e3b77e8b"), "regno" : 5, "Name" : "Sneha", "age" : 22 }
+{ "_id" : ObjectId("614ab76de8f475c6e3b77e8d"), "regno" : 4, "Name" : "vismaya", "age" : 23 }
+> db.dbmca.remove({"regno":4})
+WriteResult({ "nRemoved" : 1 })
+> db.dbmca.find()
+{ "_id" : ObjectId("614ab6b0e8f475c6e3b77e89"), "regno" : 1, "Name" : "Akshaya", "age" : 20 }
+{ "_id" : ObjectId("614ab6c9e8f475c6e3b77e8a"), "regno" : 6, "Name" : "Abhirami", "age" : 22 }
+{ "_id" : ObjectId("614ab6f2e8f475c6e3b77e8b"), "regno" : 5, "Name" : "Sneha", "age" : 22 }
+{ "_id" : ObjectId("614ab743e8f475c6e3b77e8c"), "regno" : 3, "Name" : "Anjana", "age" : 23 }
+{ "_id" : ObjectId("614ab828e8f475c6e3b77e8e"), "regno" : 7, "Name" : "Amrutha", "age" : 21 }
+{ "_id" : ObjectId("614ab840e8f475c6e3b77e8f"), "regno" : 8, "Name" : "Raj", "age" : 25 }
+{ "_id" : ObjectId("614ab872e8f475c6e3b77e90"), "regno" : 9, "Name" : "Amal", "age" : 28 }
+{ "_id" : ObjectId("614ab884e8f475c6e3b77e91"), "regno" : 10, "Name" : "Arjun", "age" : 26 }
+> db.dbcs.drop()
+true
+>> use mycev
+switched to db mycev
+> db.dropDatabase()
+{ "ok" : 1 }
+>
